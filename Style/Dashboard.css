@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(31,31,31,255);
+}
+
+.centereditems {
+    justify-content: center;
+    display: flex;
+    font-weight: 700;
+    font-size: xx-large;
+    color: #8532a8;
+}
