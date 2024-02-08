@@ -23,15 +23,10 @@ body {
 
 .background-image {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('background.png'); 
+    width: 200%;
+    height: 200%;
     background-size: cover;
-    z-index: -1; 
 }
-
 
 .blur-overlay {
     position: fixed;
@@ -53,8 +48,6 @@ body {
     width: 500px;
     height: 500px;
     background: rgba(31, 31, 31, 255);
-    overflow: hidden;
-    border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 }
 
@@ -115,9 +108,9 @@ button:hover{
 }
 
 .login{
-    height: 1000px;
+    height: 1200px; /*1000px*/
     background: rgb(51, 51, 51);
-    border-radius: 60% / 10%;
+    border-radius: 10px; /*60% / 10%*/
     transform: translateY(-140px);
     transition: .5s ease-in-out;
     background-color: #8532a8;
@@ -153,5 +146,5 @@ button:hover{
     height: 100vh;
     transform: translate(0);
     border-radius: 0;
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
 }
