@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Jost', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgba(120, 20, 101); 
     background-image: url("https://cdnb.artstation.com/p/assets/images/images/030/894/157/large/rexel-bartolome-netherportal-2.jpg?1601985798");
     background-size: cover; 
@@ -49,6 +49,7 @@ body {
     height: 500px;
     background: rgba(31, 31, 31, 255);
     box-shadow: 5px 20px 50px #000;
+    animation: fadeIn 0.9s ease forwards;
 }
 
 #chk{
@@ -67,7 +68,7 @@ label {
     justify-content: center;
     display: flex;
     margin: 60px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     transition: .5 ease-in-out;
 }
@@ -147,4 +148,15 @@ button:hover{
     transform: translate(0);
     border-radius: 0;
     transition: all 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
