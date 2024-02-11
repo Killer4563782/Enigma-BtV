@@ -4,41 +4,53 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "Style/Dashboard.css">
+        <script src = "Backend/Scripts.js"></script>
         <title>Enigma</title>
     </head>
     <body>
-        <div class="container">
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
+        <div class="blur-overlay"></div>
+        <div class="tab">
+            <a href="#" class="tablinks" onclick="openTab(event, 'Enigma')">Enigma</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'Events')">Events</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'Team')">Team</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'Credit')">Credit</a>
+        </div>
+
+        <hr class="separator">
+
+        <div id = "Enigma" class = "tabcontent" style = "display: block;">
+            <div class = "container">
+                <div class = "column">
+                    <h2>Enigma</h2>
+                    <p>information here</p>
+                </div>
             </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
+        </div>
+        
+        <div id = "Events" class = "tabcontent">
+            <div class = "container">
+                <div class = "column">
+                    <h2>Events</h2>
+                    <p>information here</p>
+                </div>
             </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
+        </div>
+
+        <div id = "Team" class = "tabcontent">
+            <div class = "container">
+                <div class = "column">
+                    <h2>Team</h2>
+                    <p>information here</p>
+                </div>
             </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
-            </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
-            </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
-            </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
-            </div>
-            <div class = "column">
-                <h2>Title</h2>
-                <p>information here</p>
+        </div>
+        
+        <div id = "Credit" class = "tabcontent">
+            <div class = "container">
+                <div class = "column">
+                    <h2>Credit</h2>
+                    <p>information here</p>
+                </div>
             </div>
         </div>
     </body>
