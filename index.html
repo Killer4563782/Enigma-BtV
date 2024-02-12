@@ -8,7 +8,6 @@
     </head>
     <body>
         <div class="container">
-            <div class="background-image"></div>
             <div class="blur-overlay"></div>
             <div class="content">
                 <div class= "main">
@@ -19,7 +18,7 @@
                             <div class = "textlable">Welcome to Enigma!</div>
                         </form>
                     </div>
-        
+    
                     <div class = "login">
                         <form>
                             <label for="chk" aria-hidden="true">Enter Website</label>
@@ -33,6 +32,7 @@
             {
                 document.querySelector('label[for="chk"').addEventListener('click', function() 
                 {
+                    document.querySelector('.textlable').style.opacity = '0';
                     document.querySelector('.main').classList.add('expanded'); 
                     setTimeout(function() 
                     {

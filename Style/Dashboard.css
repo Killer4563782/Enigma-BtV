@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(31,31,31,255);
-    background: url("https://cdn.discordapp.com/attachments/931687587964395601/1158197978075517018/2023-10-02_02.24.25.png?ex=65d29fec&is=65c02aec&hm=126700b0815db6eb35fb2d877ba5de013363b8ec18917c6f3ca4db222b0a0d19&");
+    background-color: rgba(31,31,31,255);  
 }
 
 .centereditems {
@@ -14,12 +15,15 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .column {
+    height: var(--container-height, auto);
     min-width: 300px !important; 
     min-height: 50px !important;
     background-color: rgba(51,51,51,255);
@@ -80,6 +84,362 @@ body {
     backdrop-filter: blur(2px); 
     z-index: -1;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Benutzerdefinierte Scrollleiste für Webkit-basierte Browser */
+::-webkit-scrollbar {
+  width: 10px; /* Breite der Scrollleiste */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3b3b3b; /* Hintergrundfarbe des Scrollleistenbereichs */
+}
+
+/* Griff */
+::-webkit-scrollbar-thumb {
+  background: #555; /* Farbe des Scrollleistengriffs */
+  border-radius: 5px; /* Abgerundete Ecken für den Griff */
+}
+
+/* Griff bei Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Farbe des Scrollleistengriffs im Hover-Zustand */
+}
+
+.infocard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.infocard {
+    width: calc(33.33% - 20px); /* Breite der Infokarte */
+    height: 450px; /* Höhe der Infokarte */
+    background-color: #333; /* Hintergrundfarbe der Infokarte */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    flex-grow: 0;
+    animation: fadeIn 0.9s ease forwards;
+}
+
+.image-container {
+    height: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild skalieren, um den gesamten Container zu füllen */
+}
+
+.info-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.info-container h2 {
+    color: #fff; /* Farbe für den Event-Namen */
+    margin-top: 0;
+}
+
+.info-container p {
+    color: #ccc; /* Farbe für den Text */
+}
+
+.info-container button {
+    padding: 10px 20px;
+    background-color: #8532a8; /* Hintergrundfarbe für den Signup-Button */
+    color: #fff; /* Textfarbe für den Signup-Button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+
+.info-container button:hover {
+    background-color: #6a2670; /* Hintergrundfarbe für den Signup-Button im Hover-Zustand */
+}
+
+.textlabel {
+    font-size: 50px;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    text-align: center;
+}
+
+.signup-container {
+    display: flex;
+    max-width: 800px;
+    background-color: rgba(51, 51, 51, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    margin: auto;
+    height: auto; /* Höhe auf auto setzen */
+    animation: fadeIn 0.9s ease forwards;
+}
+
+.signup-image {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+.signup-image img {
+    width: 100%; /* Bildbreite auf 100% setzen */
+    height: auto; /* Automatische Höhe */
+    display: block;
+    border-radius: 10px 0 0 10px;
+}
+
+.slash {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: linear-gradient(to bottom right, transparent 50%, rgba(51, 51, 51, 255) 50%);
+    z-index: 1;
+}
+
+.signup-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.signup-content h2 {
+    color: #8532a8;
+    margin-top: 0;
+}
+
+.signup-content p {
+    margin-top: 20px;
+}
+
+.signup-button-container {
+    align-self: flex-start; /* Button links ausrichten */
+}
+
+.signup-content button {
+    padding: 10px 20px;
+    background-color: #8532a8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.signup-content button:hover {
+    background-color: #6a2670;
+}
+
+:root {
+    --bg: rgba(51, 51, 51, 255);
+    --clr-1: #BB86FC;
+    --clr-2: #FF55FF;
+    --clr-3: #FF55FF;
+    --clr-4: #BB86FC;
+  
+    --blur: 1rem;
+    --fs: clamp(2rem, 4vw, 4rem);
+    --ls: clamp(-1.75px, -0.25vw, -3.5px);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .title {
+    font-size: var(--fs);
+    font-weight: 800;
+    letter-spacing: var(--ls);
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    margin: 0;
+  }
+  
+  .aurora {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    mix-blend-mode: darken;
+    pointer-events: none;
+  }
+  
+  .clr {
+    overflow: hidden;
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background-color: var(--clr-1);
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+    filter: blur(var(--blur));
+    mix-blend-mode: overlay;
+  }
+  
+  .clr:nth-of-type(1) {
+    top: -50%;
+    animation: aurora-border 6s ease-in-out infinite,
+      aurora-1 12s ease-in-out infinite alternate;
+  }
+  
+  .clr:nth-of-type(2) {
+    background-color: var(--clr-3);
+    right: 0;
+    top: 0;
+    animation: aurora-border 6s ease-in-out infinite,
+      aurora-2 12s ease-in-out infinite alternate;
+  }
+  
+  .clr:nth-of-type(3) {
+    background-color: var(--clr-2);
+    left: 0;
+    bottom: 0;
+    animation: aurora-border 6s ease-in-out infinite,
+      aurora-3 8s ease-in-out infinite alternate;
+  }
+  
+  .clr:nth-of-type(4) {
+    background-color: var(--clr-4);
+    right: 0;
+    bottom: -50%;
+    animation: aurora-border 6s ease-in-out infinite,
+      aurora-4 24s ease-in-out infinite alternate;
+  }
+  
+  @keyframes aurora-1 {
+    0% {
+      top: 0;
+      right: 0;
+    }
+  
+    50% {
+      top: 100%;
+      right: 75%;
+    }
+  
+    75% {
+      top: 100%;
+      right: 25%;
+    }
+  
+    100% {
+      top: 0;
+      right: 0;
+    }
+  }
+  
+  @keyframes aurora-2 {
+    0% {
+      top: -50%;
+      left: 0%;
+    }
+  
+    60% {
+      top: 100%;
+      left: 75%;
+    }
+  
+    85% {
+      top: 100%;
+      left: 25%;
+    }
+  
+    100% {
+      top: -50%;
+      left: 0%;
+    }
+  }
+  
+  @keyframes aurora-3 {
+    0% {
+      bottom: 0;
+      left: 0;
+    }
+  
+    40% {
+      bottom: 100%;
+      left: 75%;
+    }
+  
+    65% {
+      bottom: 40%;
+      left: 50%;
+    }
+  
+    100% {
+      bottom: 0;
+      left: 0;
+    }
+  }
+  
+  @keyframes aurora-4 {
+    0% {
+      bottom: -50%;
+      right: 0;
+    }
+  
+    50% {
+      bottom: 0%;
+      right: 40%;
+    }
+  
+    90% {
+      bottom: 50%;
+      right: 25%;
+    }
+  
+    100% {
+      bottom: -50%;
+      right: 0;
+    }
+  }
+  
+  @keyframes aurora-border {
+    0% {
+      border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+    }
+  
+    25% {
+      border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+    }
+  
+    50% {
+      border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+    }
+  
+    75% {
+      border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+    }
+  
+    100% {
+      border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+    }
+  }	
 
 @keyframes fadeIn {
     from {
