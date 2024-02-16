@@ -8,7 +8,7 @@
 body{
     width: 100vw;
     height: 100vh;
-    background: #081b29;
+    background: rgba(21,21,21,1);
     display: grid;
     justify-content: center;
     align-content: center;
@@ -18,18 +18,29 @@ body{
     color: #eee;
 }
 
-.wrapper {
+.Mansion-wrapper {
     position: relative;
     width: 800px;
     height: 65vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 3px solid #BB86FC;
-    box-shadow: 0 0 50px 0 #BB86FC;
+    border: 3px solid #00AAAA;
+    box-shadow: 0 0 50px 0 #00AAAA;
     animation: fadeIn 0.9s ease forwards;
 }
 
-.form{
+.Bastion-wrapper {
+    position: relative;
+    width: 800px;
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid rgba(255, 0, 0, 255);
+    box-shadow: 0 0 50px 0 rgba(255, 0, 0, 255);
+    animation: fadeIn 0.9s ease forwards;
+}
+
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +56,7 @@ body{
     border-bottom: 2px solid #eee;
 }
 
-.input{
+.Mansion-input{
     border: none;
     outline: none;
     background: none;
@@ -53,11 +64,21 @@ body{
     margin-top: 40px;
     padding-right: 10px;
     font-size: 17px;
-    color: #BB86FC;
-
+    color: #00AAAA;
 }
 
-.submit{
+.Bastion-input{
+    border: none;
+    outline: none;
+    background: none;
+    width: 260px;
+    margin-top: 40px;
+    padding-right: 10px;
+    font-size: 17px;
+    color: #DE3743;
+}
+
+.Mansion-submit{
     border: none;
     outline: none;
     width: 288px;
@@ -67,7 +88,20 @@ body{
     border-radius: 40px;
     letter-spacing: 1px;
     cursor: pointer;
-    background: linear-gradient(45deg, rgb(140, 0, 230), rgb(90, 100, 180));
+    background: linear-gradient(45deg, #154585, #00AAAA);
+}
+
+.Bastion-submit{
+    border: none;
+    outline: none;
+    width: 288px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #5f1c22, #ff0011);
 }
 
 .footer{
@@ -81,13 +115,29 @@ body{
     text-decoration: none;
 }
 
-.banner{
+.Bastion-banner {
     position: absolute;
     top: 0;
     right: 0;
     width: 450px;
     height: 390px;
-    background: linear-gradient(to right, rgb(140, 0, 230), rgb(90, 100, 180));
+    background: linear-gradient(to right, #330f12, #ff0011);
+    clip-path: polygon(0 0,100% 0,100% 100%, 60% 100%);
+    padding-right: 70px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.Mansion-banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 390px;
+    background: linear-gradient(to right, #154585, #00AAAA);
     clip-path: polygon(0 0,100% 0,100% 100%, 60% 100%);
     padding-right: 70px;
     text-align: right;

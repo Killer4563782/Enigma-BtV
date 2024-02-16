@@ -3,6 +3,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgba(31,31,31,255);  
+    background-size: cover;
+    background-image: url("https://cdn.discordapp.com/attachments/931687587964395601/1206718461170942002/2024-02-12_22.47.58.png?ex=65dd0724&is=65ca9224&hm=4c13135f8ed785f171d5cae3ba59dc4448a9a676a3de4a3fb08747dd344dbe41&");
 }
 
 .centereditems {
@@ -26,7 +28,7 @@ body {
     height: var(--container-height, auto);
     min-width: 300px !important; 
     min-height: 50px !important;
-    background-color: rgba(51,51,51,255);
+    background-color: rgba(51,51,51, 1);
     color: white !important;
     padding: 20px;
     text-align: center;
@@ -145,26 +147,50 @@ body {
   color:white; 
   font-size: 45px;
   font-weight: 800;
-  justify-content: center;
   text-align: center;
 }
 
 .infocard-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 300px); /* Vier Spalten mit jeweils 300px Breite */
+  gap: 50px; /* Standard-Abstand zwischen den Karten */
+  padding-top: 20px;
+  max-width: 1300px; /* Maximale Breite des Containers */
+  margin: 0 auto; /* Zentrierung des Containers */
+  justify-content: center; /* Horizontale Zentrierung */
+  align-items: start; /* Vertikale Ausrichtung oben */
 }
 
-.infocard {
-    width: calc(33.33% - 20px); /* Breite der Infokarte */
-    height: 450px; /* Höhe der Infokarte */
-    background-color: #333; /* Hintergrundfarbe der Infokarte */
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    flex-grow: 0;
-    animation: fadeIn 0.9s ease forwards;
+.infocard {  
+  width: 300px !important;
+  height: 450px !important; 
+  background-color: #333; 
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  flex-grow: 0;
+  animation: fadeIn 0.9s ease forwards;
+  transition: box-shadow 0.3s ease, transform 0.3s;
+  margin: 0 auto;
+}
+
+.infocard:nth-of-type(1):hover,
+.infocard:nth-of-type(2):hover,
+.infocard:nth-of-type(3):hover,
+.infocard:nth-of-type(4):hover {
+  box-shadow: 0 0 20px white;
+}
+
+.infocard:nth-of-type(5):hover { /*Bastion*/
+  box-shadow: 0 0 20px #DE3743;
+}
+
+.infocard:nth-of-type(6):hover { /*Mansion*/
+  box-shadow: 0 0 20px #00AAAA; 
+}
+
+.infocard:hover {
+  transform: scale(1.1); 
 }
 
 .image-container {
@@ -287,7 +313,7 @@ body {
 
 :root {
     --bg: rgba(51, 51, 51, 255);
-    --clr-1: #BB86FC;
+    --clr-1: #7744ff;
     --clr-2: #FF55FF;
     --clr-3: #FF55FF;
     --clr-4: #BB86FC;
@@ -489,4 +515,38 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@media screen and (max-width: 1600px) {
+  .infocard-container {
+    gap: calc((100% - 1200px) / 3); /* Dynamisch berechneter Abstand für mehr als 1600px Breite */
+    padding-left: calc((100% - 1200px) / 6); /* Dynamisch berechnetes Padding nach links */
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .infocard-container {
+    max-width: 1000px; /* Reduzierung der maximalen Breite für kleinere Bildschirme */
+    padding-left: 20px; /* Festes Padding für kleinere Bildschirme */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .infocard {
+    flex-basis: calc(50% - 50px);
+    max-width: calc(50% - 50px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .infocard {
+    flex-basis: calc(100% - 50px);
+    max-width: calc(100% - 50px);
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .infocard-container {
+    justify-content: flex-start;
+  }
 }

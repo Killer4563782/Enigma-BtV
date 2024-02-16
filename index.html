@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "Style/style.css">
+        <script src="Backend/Script.js"></script>
         <title>Enigma</title>    
     </head>
     <body>
@@ -31,19 +32,5 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() 
-            {
-                document.querySelector('label[for="chk"').addEventListener('click', function() 
-                {
-                    document.querySelector('.textlable').style.opacity = '0';
-                    document.querySelector('.main').classList.add('expanded'); 
-                    setTimeout(function() 
-                    {
-                        window.location.href = 'Dashboard.html'; 
-                    }, 600);  
-                }); 
-            }); 
-        </script>
     </body>
 </html>

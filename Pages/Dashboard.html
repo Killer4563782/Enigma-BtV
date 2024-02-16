@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "../Style/Dashboard.css">
+        <script src="../Backend/Script.js"></script>
+        <title>Enigma</title>
+    </head>
+    <body>
+        <div class="blur-overlay"></div>
+        <div class="tab">
+            <a href="#" class="tablinks active" onclick="openTab(event, 'Enigma')">Enigma</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'Chapter')">Chapter</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'Team')">Team</a>
+            <a href="#" class="tablinks" onclick="openTab(event, 'Credit')">Credit</a>
+        </div>
+
+        <hr class="separator">
+
+        <div id = "Enigma" class = "tabcontent" style = "display: block;">
+            <div class = "container">
+                <div class = "column" style = "--container-height: 50;">
+                    <h1 class="title">WELCOME TO ENIGMA!
+                        <div class="aurora">
+                          <div class="clr"></div>
+                          <div class="clr"></div>
+                          <div class="clr"></div>
+                          <div class="clr"></div>
+                        </div>
+                      </h1>
+                    <p>Dive into java version 1.20.2 and join up to 20 other players in an enigmatic adventure across six themed areas.</p>
+                    <p>Get ready for a journey filled with mysteries and treasures waiting to be discovered</p>
+                    <p>Join the event now and start your adventure!</p>
+                </div>
+                <div class="signup-container">
+                    <div class="signup-image">
+                        <img src="../Style/Assets/Bastion.png" alt="Bild für Signup">
+                        <div class="slash"></div>
+                    </div>
+                    <div class="signup-content">
+                        <h2>Signup</h2>
+                        <p>Venture into the depths of the Nether's cindering realm</p>
+                        <button type="submit" onclick="openLogin()" style="font-size: large;">Baneful Bastion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id = "Chapter" class = "tabcontent">
+            <div class = "Infocard-title">ALL CHAPTER</div>
+            <div class="infocard-container">
+                <div class="infocard">
+                    <div class="image-container">
+                        <img src="../Style/Assets/commingsoon.png" alt="Bild für die Infokarte">
+                    </div>
+                    <div class="info-container">
+                        <h2>Coming Soon</h2>
+                        <p>???</p>
+                        <button type="button">Signup</button>
+                    </div>
+                </div>
+                <div class="infocard">
+                    <div class="image-container">
+                        <img src="../Style/Assets/commingsoon.png" alt="Bild für die Infokarte">
+                    </div>
+                    <div class="info-container">
+                        <h2>Coming Soon</h2>
+                        <p>???</p>
+                        <button type="button">Signup</button>
+                    </div>
+                </div>
+                <div class="infocard">
+                    <div class="image-container">
+                        <img src="../Style/Assets/commingsoon.png" alt="Bild für die Infokarte">
+                    </div>
+                    <div class="info-container">
+                        <h2>Coming Soon</h2>
+                        <p>???</p>
+                        <button type="button">Signup</button>
+                    </div>
+                </div>
+                <div class="infocard">
+                    <div class="image-container">
+                        <img src="../Style/Assets/commingsoon.png" alt="Bild für die Infokarte">
+                    </div>
+                    <div class="info-container">
+                        <h2>Coming Soon</h2>
+                        <p>???</p>
+                        <button type="button">Signup</button>
+                    </div>
+                </div>
+                <div class="infocard">
+                    <div class="image-container"> 
+                        <img src="../Style/Assets/Bastion.png" alt="Bild für die Infokarte">
+                    </div>
+                    <div class="info-container">
+                        <h2>Baneful Bastion</h2>
+                        <p>Venture into the depths of the Nether's cindering realm</p>
+                        <button type="button" onclick="selectEvent('Bastion')" style="background-color: rgb(222, 55, 67);">Signup</button>
+                    </div>
+                </div>
+                <div class="infocard">
+                    <div class="image-container">
+                        <img src="../Style/Assets/Mansion.png" alt="Bild für die Infokarte">
+                    </div>
+                    <div class="info-container">
+                        <h2>Mischievous Mansion</h2>
+                        <p>information goes here</p>
+                        <button type="button" onclick="selectEvent('Mansion')" style = "background-color: #00AAAA;">Signup</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id = "Team" class = "tabcontent">
+            <div class = "container">
+                <div class = "column">
+                    <h2>Team</h2>
+                    <p>information here</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id = "Credit" class = "tabcontent">
+            <div class = "container">
+                <div class = "column">
+                    <h2>Credit</h2>
+                    <p>information here</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
