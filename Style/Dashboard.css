@@ -28,7 +28,7 @@ body {
     height: var(--container-height, auto);
     min-width: 300px !important; 
     min-height: 50px !important;
-    background-color: rgba(51,51,51, 1);
+    background-color: rgba(0, 0, 0, 1);
     color: white !important;
     padding: 20px;
     text-align: center;
@@ -174,18 +174,18 @@ body {
   margin: 0 auto;
 }
 
-.infocard:nth-of-type(1):hover,
-.infocard:nth-of-type(2):hover,
 .infocard:nth-of-type(3):hover,
-.infocard:nth-of-type(4):hover {
+.infocard:nth-of-type(4):hover,
+.infocard:nth-of-type(5):hover,
+.infocard:nth-of-type(6):hover {
   box-shadow: 0 0 20px white;
 }
 
-.infocard:nth-of-type(5):hover { /*Bastion*/
+.infocard:nth-of-type(2):hover { /*Bastion*/
   box-shadow: 0 0 20px #DE3743;
 }
 
-.infocard:nth-of-type(6):hover { /*Mansion*/
+.infocard:nth-of-type(1):hover { /*Mansion*/
   box-shadow: 0 0 20px #00AAAA; 
 }
 
@@ -251,6 +251,11 @@ body {
     margin: auto;
     height: auto; /* Höhe auf auto setzen */
     animation: fadeIn 0.9s ease forwards;
+    transition: box-shadow 0.3s ease, transform 0.3s;
+}
+
+.signup-container:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 255);
 }
 
 .signup-image {
@@ -277,11 +282,10 @@ body {
 }
 
 .signup-content {
-    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    min-width: 200px;
 }
 
 .signup-content h2 {
@@ -312,11 +316,11 @@ body {
 }
 
 :root {
-    --bg: rgba(51, 51, 51, 255);
-    --clr-1: #7744ff;
-    --clr-2: #FF55FF;
-    --clr-3: #FF55FF;
-    --clr-4: #BB86FC;
+    --bg: rgba(0, 0, 0, 1);
+    --clr-1: #7744ff; /* Blau */
+    --clr-2: #5e44ff; /* Dunkelblau */
+    --clr-3: #5e44ff; /* Dunkelblau */
+    --clr-4: #BB86FC; /* Hellviolett */
   
     --blur: 1rem;
     --fs: clamp(2rem, 4vw, 4rem);
@@ -368,6 +372,7 @@ body {
   
   .clr:nth-of-type(1) {
     top: -50%;
+    background-color: var(--clr-1); /* Blau */
     animation: aurora-border 6s ease-in-out infinite,
       aurora-1 12s ease-in-out infinite alternate;
   }
