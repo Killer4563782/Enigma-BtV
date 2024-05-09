@@ -25,3 +25,7 @@ function openTab(evt, tabName) {
    document.getElementById(tabName).style.display = "block";
    evt.currentTarget.className += " active";
 }
+
+document.getElementById('enterWebsite').addEventListener('click', function() {
+  document.querySelector('.container').classList.add('folded');
+});

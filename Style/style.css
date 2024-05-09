@@ -152,3 +152,27 @@ button {
         transform: translateY(0);
     }
 }
+
+/* Fade out "Enter Website" on starting page */
+#chk:checked ~ .login #enterWebsite {
+    opacity: 0;
+    transform: scale(0); /* Simulate the label "folding" by scaling down */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Simulate the container folding and expanding */
+.container {
+    transition: transform 0.5s ease;
+}
+
+#chk:checked ~ .content .main {
+    transform: scale(0) translate(-50%, -50%); /* Fold to the center */
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* You might need to adjust the selector based on your structure to target the container or a specific element for expanding */
+#chk:checked ~ .content {
+    transform: scale(1.5); /* Expand */
+    transition: transform 0.5s ease 0.5s; /* Delay the expansion to simulate unfolding after folding */
+}
