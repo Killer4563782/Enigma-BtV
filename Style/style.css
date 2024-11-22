@@ -1,178 +1,376 @@
-body {
+body 
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background-color: rgba(25, 25, 25, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+}
+
+#welcomePage 
+{
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+#welcomeButton 
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#welcomeButton:hover 
+{
+    background-color: #483d8b;
+}
+
+#homePage 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in forwards;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 32, 32, 255);
+}
+
+header 
+{
+    width: 100%;
+    background-color: rgba(27, 27, 27, 255);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px #483d8b;
+}
+
+nav ul 
+{
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(120, 20, 101); 
-    background-image: url("https://cdnb.artstation.com/p/assets/images/images/030/894/157/large/rexel-bartolome-netherportal-2.jpg?1601985798");
-    background-size: cover; 
+    width: 100%;
 }
 
-.container {
-    position: relative;
+nav ul li 
+{
+    margin: 0 15px;
+}
+
+nav ul li a 
+{
+    color: #6a5acd;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover 
+{
+    color: #8470ff;
+}
+
+main 
+{
+    padding: 20px;
+    margin-top: 60px;
+    text-align: center;
+    flex-grow: 1;
     width: 100%;
-    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+main::-webkit-scrollbar 
+{
+    width: 12px;
+}
+
+main::-webkit-scrollbar-track 
+{
+    background-color: rgba(32, 32, 32, 255);
+    border-radius: 8px;
+}
+
+main::-webkit-scrollbar-thumb 
+{
+    background-color: #6a5acd;
+    border-radius: 8px;
+    border: 3px solid rgba(32, 32, 32, 255);
+}
+
+main::-webkit-scrollbar-thumb:hover 
+{
+    background-color: #8470ff;
+}
+
+.tabContent 
+{
+    display: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+}
+
+.infoCard 
+{
+    background-color: rgba(25, 25, 25, 255);
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+    color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infoCard:hover 
+{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(132, 112, 255, 0.7);
+}
+
+.infoCard img 
+{
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.infoCard h3 
+{
+    margin: 10px 0;
+    color: #8470ff;
+}
+
+.infoCard p 
+{
+    color: #ddd;
+}
+
+#chapterCardsContainer 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.chapterCard 
+{
+    background-color: rgba(25, 25, 25, 255);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
     overflow: hidden;
 }
 
-.blur-overlay {
+.chapterCard:hover 
+{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--card-color);
+}
+
+.chapterCard img 
+{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer; 
+}
+
+.chapterCard h3 
+{
+    margin: 15px 0 10px;
+    color: var(--card-color);
+}
+
+.chapterCard p 
+{
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.signupButton 
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--card-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.signupButton:hover 
+{
+    background-color: var(--card-hover-color);
+}
+
+.modal 
+{
+    display: none; 
     position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content 
+{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 40%; 
+}
+
+.close 
+{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus 
+{
+    color: #ddd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.teamContainer 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.teamMember 
+{
+    background-color: rgba(35, 35, 35, 255); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.teamMember img 
+{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.teamMember h3 
+{
+    margin: 15px 0 5px;
+    color: #8470ff;
+}
+
+.teamMember p 
+{
+    color: #ddd;
+    margin: 0 15px 15px;
+}
+
+.teamMember .socialLinks 
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.teamMember .socialLinks a 
+{
+    color: #8470ff;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 24px; 
+    transition: color 0.3s ease;
+}
+
+.teamMember .socialLinks a:hover 
+{
+    color: #6a5acd;
+}
+
+.teamMember:hover 
+{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(132, 112, 255, 0.7);
+}
+
+.teamMember::before 
+{
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    backdrop-filter: blur(2px); 
-    z-index: -1;
+    height: 10px;
 }
 
-.content {
-    z-index: 1;
-    text-align: center;
-    color: white;
-}
-
-.main {
-    width: 500px;
-    height: 500px;
-    background: rgba(31, 31, 31, 255);
-    box-shadow: 5px 20px 50px #000;
-    animation: fadeIn 0.9s ease forwards;
-}
-
-#chk{
-    display: none !important;
-}
-
-.signup{
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-label {
-    color: #fff;
-    font-size: 2.3em;
-    justify-content: center;
-    display: flex;
-    margin: 60px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .5 ease-in-out;
-}
-
-button {
-    width: 60%;
-    height: 40px; 
-    margin: 10px auto;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: rgba(0, 120, 255, 255);
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 20px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: .2s ease-in;
-    cursor: pointer;
-}
-
-
-.login{
-    height: 1200px; 
-    background: rgb(51, 51, 51);
-    border-radius: 10px; 
-    transform: translateY(-140px);
-    transition: .5s ease-in-out;
-    background-color: #8532a8;
-}
-
-.login label{
-    color: rgba(255, 255, 255, 255);
-    padding-top: 20px;
-    transform: scale(.6);
-}
-
-#chk:checked ~ .login{
-    transform: translateY(-1000px);
-}
-
-#chk:checked ~ .login lable {
-    transform: scale(1);  
-    color: #7332a8;
-}
-
-#chk:checked ~ .signup lable {
-    transform: scale(.6); 
-}
-
-.textlable {
-    color:  #7332a8;
-    font-weight: 700;
-    font-size: 40px;
-    padding-top: +20px;
-    transition: opacity .3s ease;
-    opacity: 1;
-}
-
-.expanded {
-    width: 100vw;
-    height: 100vh;
-    transform: translate(0);
-    border-radius: 0;
-    transition: all 0.6s ease;
-}
-
-.logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.logo-container img {
-    width: 300px; /* 200px*/
-    height: auto;
-}
-
-@keyframes fadeIn {
-    from {
+@keyframes fadeOut 
+{
+    to 
+    {
         opacity: 0;
-        transform: translateY(-20px);
     }
-    to {
+}
+
+@keyframes fadeIn 
+{
+    from 
+    {
+        opacity: 0;
+    }
+    to 
+    {
         opacity: 1;
-        transform: translateY(0);
     }
-}
-
-/* Fade out "Enter Website" on starting page */
-#chk:checked ~ .login #enterWebsite {
-    opacity: 0;
-    transform: scale(0); /* Simulate the label "folding" by scaling down */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Simulate the container folding and expanding */
-.container {
-    transition: transform 0.5s ease;
-}
-
-#chk:checked ~ .content .main {
-    transform: scale(0) translate(-50%, -50%); /* Fold to the center */
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-/* You might need to adjust the selector based on your structure to target the container or a specific element for expanding */
-#chk:checked ~ .content {
-    transform: scale(1.5); /* Expand */
-    transition: transform 0.5s ease 0.5s; /* Delay the expansion to simulate unfolding after folding */
 }
