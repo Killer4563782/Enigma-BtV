@@ -19,6 +19,7 @@
             <button id="welcomeButton">Welcome</button>
         </div>
     
+
         <div id="homePage" style="display: none;">
             <header>
                 <nav>
@@ -40,46 +41,56 @@
                 <section id="chapters" class="tabContent" style="display:none;">
                     <h2>Chapters</h2>
                     <div id="chapterCardsContainer">
-                        <div class="chapterCard" data-color="#00AAAA">
+                        
+                        <!--Mansion-->
+                        <div class="chapterCard" data-color="#00AAAA" onclick="expandCard(this)">
                             <img src="Style/Assets/Mansion.png" alt="Chapter Image">
-                            <h3>Mischievous Mansion</h3>
-                            <p>i still need a info for this chapter lmao</p>
-                            <button class="signupButton">Sign Up</button>
+                            <div class="cardContent">
+                                <h3>Mischievous Mansion</h3>
+                                <p>Explore the mansion’s warped, twisted corridors, where every step may awaken your demise.</p>
+                            </div>
+                            <div class="expandedContent" style="display: none;">
+                                <h3>Mischievous Mansion</h3>
+                                <p>This is the additional text on the right side of the image.</p>
+                                <p>Additional text can go here, describing more about the chapter.</p>
+                            </div>
                         </div>
-                        
-                        <div class="chapterCard" data-color="#DE3743">
+
+                        <!--Bastion-->
+                        <div class="chapterCard" data-color="#DE3743" onclick="expandCard(this)">
                             <img src="Style/Assets/Bastion.png" alt="Chapter Image">
-                            <h3>Baneful Bastion</h3>
-                            <p>Venture into the depths of the Nether's cindering realm</p>
-                            <button class="signupButton">Sign Up</button>
+                            <div class="cardContent">
+                                <h3>Baneful Bastion</h3>
+                                <p>Venture into the depths of the Nether's cindering realm.</p>
+                            </div>
+                            <div class="expandedContent" style="display: none;">
+                                <p>This is the additional text on the right side of the image.</p>
+                                <p>Additional text can go here, describing more about the chapter.</p>
+                            </div>
                         </div>
                         
                         <div class="chapterCard" data-color="#b4b4b4">
                             <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
                             <h3>???</h3>
                             <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
                         </div>
                         
                         <div class="chapterCard" data-color="#b4b4b4">
                             <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
                             <h3>???</h3>
                             <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
                         </div>
                         
                         <div class="chapterCard" data-color="#b4b4b4">
                             <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
                             <h3>???</h3>
                             <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
                         </div>
                         
                         <div class="chapterCard" data-color="#b4b4b4">
                             <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
                             <h3>???</h3>
                             <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
                         </div>
                     </div>
                 </section>
@@ -93,6 +104,8 @@
                 </section>
             </main>
         </div>
+        <div id="overlay" class="overlay"></div>
     </body>
     <script src="Backend/script.js"></script>
+    <script src="Backend/Team.js"></script>
 </html>
