@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #0b0014, #1d0029); 
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    color: rgb(140, 0, 255);
+}
+
+.camera-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#000, #020212);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 3;
+    animation: portalGlow 6s infinite alternate;
+}
+
+.scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom, rgba(0, 255, 255, 0.05), rgba(0, 255, 255, 0.05) 2px, transparent 2px, transparent 4px);
+    animation: scrollLines 2s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.target {
+    width: 160px;
+    height: 160px;
+    border: 4px dashed rgba(140, 0, 255, 0.8);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in-out, targetGlow 1.5s infinite alternate;
+    z-index: 4;
+    box-shadow: 0 0 20px rgba(140, 0, 255, 1);
+}
+
+.ui-text {
+    margin-top: 20px;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(140, 0, 255, 1), 0 0 20px rgba(140, 0, 255, 0.8);
+    z-index: 3;
+    animation: textAnimation 3s infinite alternate;
+}
+
+.glyph-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 40px;
+    color: rgba(140, 0, 255, 0.9);
+    animation: glyphAnimation 3s infinite alternate;
+    z-index: 5;
+}
+
+.glyph {
+    opacity: 0;
+    color: rgba(140, 0, 255, 1);
+    animation: glyphFadeIn 1s forwards, glyphFlare 2s infinite alternate;
+    animation-delay: 0s;
+    text-shadow: 0 0 20px rgba(140, 0, 255, 0.8), 0 0 30px rgba(140, 0, 255, 0.9);
+}
+
+.glyph.active {
+    animation: glyphActiveGlow 1s infinite;
+}
+
+.glyph:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.glyph:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.glyph:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.glyph:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.glyph:nth-child(5) {
+    animation-delay: 4s;
+}
+
+.glyph:nth-child(6) {
+    animation-delay: 5s;
+}
+
+.glyph:nth-child(7) {
+    animation-delay: 6s;
+}
+
+/*Keyframe animations*/ 
+@keyframes pulse 
+{
+    0% 
+    { 
+        transform: scale(0.95); 
+        opacity: 0.7; 
+    }
+
+    50% 
+    { 
+        transform: scale(1.1); 
+        opacity: 1; 
+    }
+
+    100% 
+    { 
+        transform: scale(0.95); 
+        opacity: 0.7; 
+    }
+}
+
+@keyframes targetGlow 
+{
+    0% 
+    { 
+        box-shadow: 0 0 30px rgba(140, 0, 255, 0.6); 
+    }
+
+    50% 
+    { 
+        box-shadow: 0 0 70px rgba(140, 0, 255, 1); 
+    }
+
+    100% 
+    { 
+        box-shadow: 0 0 30px rgba(140, 0, 255, 0.6); 
+    }
+}
+
+@keyframes textAnimation 
+{
+    0% 
+    { 
+        opacity: 0.7; 
+    }
+
+    100% 
+    { 
+        opacity: 1; 
+    }
+}
+
+@keyframes glyphFadeIn 
+{
+    0% 
+    { 
+        opacity: 0; 
+        transform: scale(0.5); 
+    }
+
+    100% 
+    { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+@keyframes glyphFlare 
+{
+    0% 
+    { 
+        text-shadow: 0 0 20px rgba(140, 0, 255, 0.8); 
+    }
+
+    50% 
+    { 
+        text-shadow: 0 0 40px rgba(140, 0, 255, 1); 
+    }
+
+    100% 
+    { 
+        text-shadow: 0 0 20px rgba(140, 0, 255, 0.8); 
+    }
+}
+
+@keyframes glyphActiveGlow 
+{
+    0% 
+    { 
+        text-shadow: 0 0 30px rgba(140, 0, 255, 1); 
+    }
+
+    50% 
+    { 
+        text-shadow: 0 0 50px rgba(140, 0, 255, 1); 
+    }
+
+    100% 
+    { 
+        text-shadow: 0 0 30px rgba(140, 0, 255, 1); 
+    }
+}
+
+@keyframes scrollLines 
+{
+    0% 
+    { 
+        background-position: 0 0; 
+    }
+    
+    100% 
+    { 
+        background-position: 0 4px; 
+    }
+}
+
+@keyframes portalGlow 
+{
+    0% 
+    {
+        box-shadow: 0 0 20px rgba(140, 0, 255, 0.6), 0 0 100px rgba(140, 0, 255, 1);
+    }
+
+    50% 
+    {
+        box-shadow: 0 0 40px rgba(140, 0, 255, 1), 0 0 150px rgba(140, 0, 255, 0.9);
+    }
+
+    100% 
+    {
+        box-shadow: 0 0 20px rgba(140, 0, 255, 0.6), 0 0 100px rgba(140, 0, 255, 1);
+    }
+}

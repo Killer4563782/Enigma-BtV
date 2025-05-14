@@ -1,98 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"></script>
-        <link rel = "stylesheet" href = "Style/style.css">
-        <title>Enigma</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Finding The Void</title>
+        <link rel="stylesheet" href="Style/Camerastart.css">
+        <script src="Backend/camerastart.js"></script>
     </head>
     <body>
-        <div id="modal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImage">
-        </div>
-
-        <div id="welcomePage">
-            <h1>Welcome to Enigma</h1>
-            <button id="welcomeButton">Welcome</button>
-        </div>
-    
-        <div id="homePage" style="display: none;">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="#" onclick="showTab('enigma')">Enigma</a></li>
-                        <li><a href="#" onclick="showTab('chapters')">Chapters</a></li>
-                        <li><a href="#" onclick="showTab('team')">Team</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <main id="content">
-                <!--Enigme Content | New Page-->
-                <section id="enigma" class="tabContent">
-                    <h2>Enigma</h2>
-                    <div id="infoCardsContainer"></div>
-                </section>
-                
-                <!--Chapter Content | All the different chapters are lister here and only here-->
-                <section id="chapters" class="tabContent" style="display:none;">
-                    <h2>Chapters</h2>
-                    <div id="chapterCardsContainer">
-                        <div class="chapterCard" data-color="#00AAAA">
-                            <img src="Style/Assets/Mansion.png" alt="Chapter Image">
-                            <h3>Mischievous Mansion</h3>
-                            <p>i still need a info for this chapter lmao</p>
-                            <button class="signupButton">Sign Up</button>
-                        </div>
-                        
-                        <div class="chapterCard" data-color="#DE3743">
-                            <img src="Style/Assets/Bastion.png" alt="Chapter Image">
-                            <h3>Baneful Bastion</h3>
-                            <p>Venture into the depths of the Nether's cindering realm</p>
-                            <button class="signupButton">Sign Up</button>
-                        </div>
-                        
-                        <div class="chapterCard" data-color="#b4b4b4">
-                            <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
-                            <h3>???</h3>
-                            <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
-                        </div>
-                        
-                        <div class="chapterCard" data-color="#b4b4b4">
-                            <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
-                            <h3>???</h3>
-                            <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
-                        </div>
-                        
-                        <div class="chapterCard" data-color="#b4b4b4">
-                            <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
-                            <h3>???</h3>
-                            <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
-                        </div>
-                        
-                        <div class="chapterCard" data-color="#b4b4b4">
-                            <img src="Style/Assets/commingsoon.png" alt="Chapter Image">
-                            <h3>???</h3>
-                            <p>Coming Soon</p>
-                            <button class="signupButton">Sign Up</button>
-                        </div>
-                    </div>
-                </section>
-                
-                <!--Just a colltection of the team, for ex. Luca, will jxson, TheMSTAACorn etc-->
-                <section id="team" class="tabContent" style="display:none;">
-                    <h2>Team</h2>
-                    <div id="teamContainer" class="teamContainer">
-                        <!-- Team members will be dynamically inserted here -->
-                    </div>
-                </section>
-            </main>
+        <div class="camera-overlay">
+            <div class="scan-lines"></div>
+            <div class="target"></div>
+            <div class="ui-text">Calibrating Void Coordinations...</div>
+            <div class="glyph-container hidden">
+                <span class="glyph">Θ</span>
+                <span class="glyph">Γ</span>
+                <span class="glyph">Δ</span>
+                <span class="glyph">Λ</span>
+                <span class="glyph">Π</span>
+                <span class="glyph">Σ</span>
+                <span class="glyph">Ω</span>
+            </div>
         </div>
     </body>
-    <script src="Backend/script.js"></script>
 </html>

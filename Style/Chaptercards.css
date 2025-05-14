@@ -1,0 +1,91 @@
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 40px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.chapter-card {
+    background: linear-gradient(135deg, #1a0033, #2a0055);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(140, 0, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+    max-height: 400px;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(140, 0, 255, 0.4);
+}
+
+.chapter-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 3px solid #5e00a1;
+    background: #0c0015;
+    box-shadow: inset 0 0 10px rgba(140, 0, 255, 0.4);
+    flex-shrink: 0;
+}
+
+.chapter-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.chapter-card h2 {
+    margin: 10px 15px 5px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    border-left: 4px solid #9900ff;
+    padding-left: 10px;
+    text-shadow: 0 0 5px rgba(153, 0, 255, 0.3);
+}
+
+.chapter-card p {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin: 0 15px 15px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.theme-void {
+    background: radial-gradient(ellipse at center, #330000, #000000);
+}
+
+.theme-fragment {
+    background: linear-gradient(135deg, #002244, #000000);
+}
+
+.theme-echo {
+    background: linear-gradient(135deg, #424242, #000000);
+}
+
+@media (max-width: 900px) 
+{
+    .chapter-grid 
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) 
+{
+    .chapter-grid 
+    {
+        grid-template-columns: 1fr;
+    }
+}
