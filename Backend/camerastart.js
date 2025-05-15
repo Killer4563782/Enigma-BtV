@@ -1,11 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const glyphs = document.querySelectorAll(".glyph");
     const glyphContainer = document.querySelector(".glyph-container");
+    const uiText = document.querySelector(".ui-text");
     const totalGlyphs = glyphs.length;
     let foundGlyphs = 0;
 
+    glyphContainer.classList.remove("hidden");
+    glyphContainer.classList.add("show");
+
+    glyphs.forEach(g => {
+        g.style.visibility = "hidden";
+        g.style.opacity = "0";
+    });
+
     function activateGlyph(glyph) {
-        glyph.classList.add("active");
+        glyph.style.visibility = "visible";
+        glyph.style.opacity = "1";
+        glyph.classList.add("found");
     }
 
     function flashGlyph() {
@@ -13,13 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const glyph = glyphs[foundGlyphs];
             activateGlyph(glyph);
             foundGlyphs++;
+
             if (foundGlyphs === totalGlyphs) {
                 setTimeout(() => {
-                    document.querySelector(".ui-text").textContent = "All Glyphs Found! Opening Portal...";
+                    uiText.textContent = "All Glyphs Found! Opening Portal...";
                     setTimeout(() => {
-                        glyphs.forEach(glyph => {
-                            glyph.classList.add("active");
-                        });
+                        glyphs.forEach(g => g.classList.add("active"));
                         setTimeout(() => {
                             window.location.href = "Landingpage.html";
                         }, 2000);
@@ -33,6 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const interval = setInterval(flashGlyph, 1000);
         setTimeout(() => {
             clearInterval(interval);
-        }, 7000);
+        }, totalGlyphs * 1000);
     }, 1000);
 });

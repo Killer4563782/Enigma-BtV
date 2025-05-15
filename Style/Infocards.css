@@ -10,13 +10,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: auto;
-    max-height: 180px;
     width: 100%;
-    max-width: 350px;
+    max-width: 600px;
     margin: 10px 0;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     box-sizing: border-box;
+    height: auto;
 }
 
 .info-card p::after {
@@ -48,10 +47,12 @@
     margin: 0;
     font-size: 14px;
     color: #ccc;
-    flex-grow: 1;
     text-align: left;
     margin-bottom: 15px;
     position: relative;
+    white-space: normal;
+    word-wrap: break-word;
+    flex-grow: 1;
 }
 
 .info-card.announcement {
@@ -66,10 +67,10 @@
 
 .info-wrapper {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     padding: 10px 0;
-    gap: 15px; 
+    gap: 15px;
     align-items: center;
 }
 
