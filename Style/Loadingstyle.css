@@ -1,0 +1,188 @@
+ body {
+     margin: 0;
+     padding: 0;
+     background: radial-gradient(ellipse at center, #0a001f 0%, #000 100%);
+     overflow: hidden;
+     font-family: 'Segoe UI', sans-serif;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     position: relative;
+ }
+
+ .oracle-container {
+     position: relative;
+     width: 250px;
+     height: 250px;
+     border-radius: 50%;
+     background: rgba(255, 255, 255, 0.05);
+     box-shadow: 0 0 60px #b17aff, inset 0 0 30px #8e44ff;
+     overflow: hidden;
+     flex-shrink: 0;
+ }
+
+ .swirl {
+     position: absolute;
+     width: 600px;
+     height: 600px;
+     background: conic-gradient(#ff00ff, #5500ff, #ff00ff);
+     border-radius: 50%;
+     top: -175px;
+     left: -175px;
+     opacity: 0.15;
+     animation: swirlRotate 12s linear infinite;
+ }
+
+ .stars {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+     overflow: visible;
+ }
+
+ .star {
+     position: absolute;
+     width: 2px;
+     height: 2px;
+     background: white;
+     border-radius: 50%;
+     animation: twinkle 2s infinite alternate;
+ }
+
+ .meteor {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 2px;
+     height: 80px;
+     background: linear-gradient(to bottom, white, transparent);
+     opacity: 0.8;
+     transform-origin: top left;
+     pointer-events: none;
+     animation: meteorMove 1.5s linear forwards;
+     box-shadow: 0 0 8px 2px #a066ff;
+     border-radius: 1px;
+ }
+
+
+
+ .glow-symbol {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 32px;
+     color: #ffccff;
+     text-shadow: 0 0 20px #ff99ff;
+     animation: symbolPulse 3s infinite;
+     user-select: none;
+ }
+
+ .text {
+     margin-top: 30px;
+     font-size: 20px;
+     color: #bbbbff;
+     text-shadow: 0 0 10px #5500aa;
+     animation: textFade 5s linear infinite;
+     user-select: none;
+ }
+
+ .progress-container {
+     width: 300px;
+     height: 20px;
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 10px;
+     overflow: hidden;
+     margin-top: 20px;
+     box-shadow: 0 0 10px #5500ff;
+     flex-shrink: 0;
+ }
+
+ .progress-bar {
+     height: 100%;
+     width: 0%;
+     background: linear-gradient(90deg, #9f5eff, #d69cff);
+     box-shadow: 0 0 10px #aa66ff;
+     border-radius: 10px;
+     transition: width 0.3s ease;
+ }
+
+ @keyframes swirlRotate 
+ {
+     0% 
+     {
+         transform: rotate(0deg);
+     }
+
+     100% 
+     {
+         transform: rotate(360deg);
+     }
+ }
+
+ @keyframes twinkle 
+ {
+     0% 
+     {
+         opacity: 0.3;
+         transform: scale(1);
+     }
+
+     100% 
+     {
+         opacity: 1;
+         transform: scale(1.5);
+     }
+ }
+
+ @keyframes symbolPulse 
+ {
+
+     0%,
+     100% 
+     {
+         transform: translate(-50%, -50%) scale(1);
+     }
+
+     50% 
+     {
+         transform: translate(-50%, -50%) scale(1.2);
+     }
+ }
+
+ @keyframes textFade 
+ {
+     0% 
+     {
+         opacity: 0.5;
+     }
+
+     50% 
+     {
+         opacity: 1;
+     }
+
+     100% 
+     {
+         opacity: 0.5;
+     }
+ }
+
+ @keyframes meteorMove 
+ {
+     0% 
+     {
+         transform: translate(0, 0) rotate(135deg);
+         opacity: 1;
+     }
+
+     100% 
+     {
+         transform: translate(var(--dx), var(--dy)) rotate(135deg);
+         opacity: 0;
+     }
+ }

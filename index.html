@@ -4,30 +4,20 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Finding The Void</title>
-        <link rel="stylesheet" href="Style/Camerastart.css">
-        <script src="Backend/camerastart.js"></script>
+        <link rel="stylesheet" href="Style/Loadingstyle.css">
     </head>
     <body>
-        <div class="camera-overlay">
-            <div class="scan-lines"></div>
-            <div class="target"></div>
-            <div class="ui-text">Calibrating Void Coordinations...</div>
-            <div class="glyph-container hidden">
-                <span class="glyph">∂</span>
-                <span class="glyph">ợ</span>
-                <span class="glyph">ɹ</span>
-                <span class="glyph">г</span>
-                <span class="glyph">מ</span>
-                <span class="glyph">מ</span>
-                <span class="glyph">đ</span>
-                <span class="glyph">ø</span>
-                <span class="glyph">ƒ</span>
-                <span class="glyph">ρ</span>
-                <span class="glyph">σ</span>
-                <span class="glyph">Ŧ</span>
-                <span class="glyph">∩</span>
-                <span class="glyph">ρ</span>
-            </div>
+        <div class="oracle-container">
+            <div class="swirl" id="swirl"></div>
+            <div class="stars" id="stars"></div>
+            <div class="glow-symbol">✦</div>
         </div>
+        <div class="text" id="oracleText">Decoding Celestial Prophecies...</div>
+        
+        <div id="progressContainer" style="width: 250px; height: 10px; background: #222; border-radius: 5px; margin-top: 20px;">
+            <div id="progressBar" style="width: 0%; height: 100%; background: #b17aff; border-radius: 5px;"></div>
+        </div>
+
+        <script src="Backend/animations.js"></script>
     </body>
 </html>
