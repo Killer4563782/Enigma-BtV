@@ -111,78 +111,273 @@
      transition: width 0.3s ease;
  }
 
- @keyframes swirlRotate 
- {
-     0% 
-     {
+ @keyframes swirlRotate {
+     0% {
          transform: rotate(0deg);
      }
 
-     100% 
-     {
+     100% {
          transform: rotate(360deg);
      }
  }
 
- @keyframes twinkle 
- {
-     0% 
-     {
+ @keyframes twinkle {
+     0% {
          opacity: 0.3;
          transform: scale(1);
      }
 
-     100% 
-     {
+     100% {
          opacity: 1;
          transform: scale(1.5);
      }
  }
 
- @keyframes symbolPulse 
- {
+ @keyframes symbolPulse {
 
      0%,
-     100% 
-     {
+     100% {
          transform: translate(-50%, -50%) scale(1);
      }
 
-     50% 
-     {
+     50% {
          transform: translate(-50%, -50%) scale(1.2);
      }
  }
 
- @keyframes textFade 
- {
-     0% 
-     {
+ @keyframes textFade {
+     0% {
          opacity: 0.5;
      }
 
-     50% 
-     {
+     50% {
          opacity: 1;
      }
 
-     100% 
-     {
+     100% {
          opacity: 0.5;
      }
  }
 
- @keyframes meteorMove 
- {
-     0% 
-     {
+ @keyframes meteorMove {
+     0% {
          transform: translate(0, 0) rotate(135deg);
          opacity: 1;
      }
 
-     100% 
-     {
+     100% {
          transform: translate(var(--dx), var(--dy)) rotate(135deg);
          opacity: 0;
+     }
+ }
+
+
+ /*Testing stuff*/
+ .floating-glyphs {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+     overflow: hidden;
+     z-index: 1;
+ }
+
+ .floating-glyphs span {
+     position: absolute;
+     font-family: 'Segoe UI', sans-serif;
+     font-size: 18px;
+     opacity: 0.8;
+     animation: glowPulse 3s ease-in-out infinite;
+     white-space: pre;
+     color: transparent;
+     background: linear-gradient(120deg, #ff7be5, #9d8dff, #00ffe0);
+     background-clip: text;
+     -webkit-background-clip: text;
+     text-shadow: 0 0 4px #ffccff88, 0 0 8px #cc99ff88, 0 0 14px #9d8dff44;
+     pointer-events: none;
+ }
+
+
+ /* Zufällige Positionen, Größen, Delays */
+ .floating-glyphs span:nth-child(1) {
+     top: 12%;
+     left: 18%;
+     font-size: 22px;
+     animation-delay: 0s;
+     transform: rotate(10deg);
+ }
+
+ .floating-glyphs span:nth-child(2) {
+     top: 32%;
+     left: 70%;
+     font-size: 18px;
+     animation-delay: 2s;
+     transform: rotate(-5deg);
+ }
+
+ .floating-glyphs span:nth-child(3) {
+     top: 65%;
+     left: 25%;
+     font-size: 20px;
+     animation-delay: 4s;
+     transform: rotate(15deg);
+ }
+
+ .floating-glyphs span:nth-child(4) {
+     top: 55%;
+     left: 80%;
+     font-size: 26px;
+     animation-delay: 6s;
+     transform: rotate(30deg);
+ }
+
+ .floating-glyphs span:nth-child(5) {
+     top: 40%;
+     left: 10%;
+     font-size: 16px;
+     animation-delay: 8s;
+     transform: rotate(-15deg);
+ }
+
+ .floating-glyphs span:nth-child(6) {
+     top: 20%;
+     left: 50%;
+     font-size: 24px;
+     animation-delay: 10s;
+     transform: rotate(45deg);
+ }
+
+ .floating-glyphs span:nth-child(7) {
+     top: 70%;
+     left: 60%;
+     font-size: 19px;
+     animation-delay: 12s;
+     transform: rotate(-30deg);
+ }
+
+ .floating-glyphs span:nth-child(8) {
+     top: 80%;
+     left: 40%;
+     font-size: 21px;
+     animation-delay: 14s;
+     transform: rotate(60deg);
+ }
+
+ .floating-glyphs span:nth-child(9) {
+     top: 25%;
+     left: 85%;
+     font-size: 17px;
+     animation-delay: 16s;
+     transform: rotate(-45deg);
+ }
+
+ .floating-glyphs span:nth-child(10) {
+     top: 50%;
+     left: 30%;
+     font-size: 20px;
+     animation-delay: 18s;
+     transform: rotate(5deg);
+ }
+
+ .floating-glyphs span:nth-child(11) {
+     top: 15%;
+     left: 75%;
+     font-size: 18px;
+     animation-delay: 20s;
+     transform: rotate(25deg);
+ }
+
+ .floating-glyphs span:nth-child(12) {
+     top: 60%;
+     left: 5%;
+     font-size: 22px;
+     animation-delay: 22s;
+     transform: rotate(-10deg);
+ }
+
+ .floating-glyphs span:nth-child(13) {
+     top: 35%;
+     left: 45%;
+     font-size: 24px;
+     animation-delay: 24s;
+     transform: rotate(35deg);
+ }
+
+ .oracle-container::before {
+     content: '';
+     position: absolute;
+     width: 300px;
+     height: 300px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border-radius: 50%;
+     background: radial-gradient(circle, rgba(177, 122, 255, 0.1) 0%, transparent 70%);
+     animation: auraPulse 6s ease-in-out infinite;
+     z-index: -1;
+ }
+
+ @keyframes auraPulse {
+
+     0%,
+     100% {
+         transform: translate(-50%, -50%) scale(1);
+         opacity: 0.3;
+     }
+
+     50% {
+         transform: translate(-50%, -50%) scale(1.2);
+         opacity: 0.6;
+     }
+ }
+
+
+ @keyframes fall {
+     0% {
+         transform: translateY(-10px);
+         opacity: 0.5;
+     }
+
+     100% {
+         transform: translateY(100vh);
+         opacity: 0;
+     }
+ }
+
+
+ @keyframes floatGlyph {
+     0% {
+         transform: translateY(0px) scale(1) rotate(var(--angle));
+         opacity: 0.2;
+     }
+
+     50% {
+         transform: translateY(-15px) scale(1.1) rotate(var(--angle));
+         opacity: 0.4;
+     }
+
+     100% {
+         transform: translateY(0px) scale(1) rotate(var(--angle));
+         opacity: 0.2;
+     }
+ }
+
+ @keyframes glowPulse {
+
+     0%,
+     100% {
+         text-shadow:
+             0 0 6px #ff99ff,
+             0 0 12px #cc88ff,
+             0 0 20px #88ccff;
+         opacity: 0.8;
+     }
+
+     50% {
+         text-shadow:
+             0 0 12px #ffccff,
+             0 0 20px #d9b3ff,
+             0 0 30px #88e0ff;
+         opacity: 1;
      }
  }
