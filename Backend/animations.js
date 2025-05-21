@@ -4,8 +4,7 @@ for (let i = 0; i < 50; i++) {
     star.style.cssText = `
     top: ${Math.random() * 100}%;
     left: ${Math.random() * 100}%;
-    animation-duration: ${1 + Math.random() * 2}s;
-  `;
+    animation-duration: ${1 + Math.random() * 2}s;`;
     starContainer.appendChild(star);
 }
 
@@ -26,12 +25,18 @@ setInterval(spawnMeteor, 1200);
 
 const oracleText = document.getElementById('oracleText');
 const textArray = [
-    "Decoding Voids Prophecies...",
-    "Aligning Star Patterns...",
-    "Reading Temporal Echoes...",
-    "Summoning the Void..."
+    "Retrieving Clues",
+    "Listening to Echoes",
+    "Watching Stars",
+    "Reading Forgotten Pages",
+    "Studying Floorplans",
+    "Trading Loot",
+    "Awakening Mobs",
+    "Opening Traveling Bag",
+    "Following the Path",
+    "What is my purpose?" //Chance of this needs to be decreased so it only appears every 10 times
 ];
-setInterval(() => oracleText.textContent = textArray[Math.floor(Math.random() * textArray.length)], 5000);
+setInterval(() => oracleText.textContent = textArray[Math.floor(Math.random() * textArray.length)], 2500);
 
 document.addEventListener('mousemove', e => {
     const swirl = document.getElementById('swirl');
@@ -47,7 +52,7 @@ const progressSpeed = 0.2;
 const updateProgress = () => {
     if (progress >= targetProgress) {
         progressBar.style.width = '100%';
-        oracleText.textContent = "Oracle Ready.";
+        oracleText.textContent = "Void is Ready.";
          setTimeout(() => window.location.href = "Landingpage.html", 500);
         return;
     }
@@ -104,7 +109,8 @@ document.addEventListener('mousemove', e => {
     });
 });
 
-const highlightOrder = [5, 3, 7, 0, 2, 1, 4, 6, 8, 9, 10, 11, 12];
+const highlightOrder = [0, 1, 2, 3, 4, 5, 5, 4, 6, 7, 8, 9, 10, 11, 12];
+
 const flashWhite = idx => {
     const el = glyphs[idx];
     if (!el) return;
@@ -116,7 +122,11 @@ const flashWhite = idx => {
         el.style.textShadow = "";
     }, 500);
 };
+
 const startWhiteFlashSequence = () => {
-    highlightOrder.forEach((idx, i) => setTimeout(() => flashWhite(idx), i * 300));
+    highlightOrder.forEach((idx, i) =>
+        setTimeout(() => flashWhite(idx), i * 300)
+    );
 };
+
 setTimeout(startWhiteFlashSequence, 2000);

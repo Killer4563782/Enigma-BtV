@@ -55,11 +55,38 @@
 }
 
 .chapter-card p {
-    color: #aaaaaa;
-    font-size: 14px;
+    color: #dddddd;
+    font-size: 15px;
     margin: 0 15px 15px;
-    line-height: 1.4;
+    line-height: 1.6;
     text-align: left;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.view-btn {
+    display: inline-block;
+    margin: 10px 15px 15px;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #9900ff, #5e00a1);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(153, 0, 255, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.view-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 18px rgba(153, 0, 255, 0.6), 0 0 6px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #aa00ff, #6a00c0);
 }
 
 .theme-void {

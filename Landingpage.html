@@ -7,8 +7,9 @@
         <link rel = "stylesheet" href = "Style/Spinner.css">
         <link rel = "stylesheet" href = "Style/Teamcards.css">
         <link rel = "stylesheet" href = "Style/Infocards.css">
+        <link rel = "stylesheet" href = "Style/ChapterInfo.css">
         <link rel = "stylesheet" href = "Style/Chaptercards.css">
-        <script src = "Backend/script.js"></script>
+        <link rel = "icon" type = "image/png" href = "Style/Assets/logo.png">
         <title>Enigma | Beyond the Void</title>
     </head>
     <body>
@@ -37,6 +38,7 @@
                     
                     <!--TODO Fix paddikng betweeen both texts-->
                     Enigma is a six-chaptered Minecraft adventure, designed to deliver an immersive and story-driven experience while staying as close to vanilla Minecraft as possible. That means no mods, no datapacks, and no custom textures—just pure Minecraft creativity combined with custom mechanics through plugins.
+                    <h1></h1> <!--Used for padding lmao-->
                     <p>Each chapter features a unique theme, custom structures, handcrafted dungeons, bosses, and deep lore. Players will explore mysterious landscapes, uncover ancient secrets, and face challenges that test their skill and knowledge. Players can upgrade their gear, acquire unique items, and join up to 20 other players in battle against the structures enemies!</p>
                 </div>
             </div>
@@ -46,16 +48,36 @@
         <section id="chapters">
             <h2 class="section-title">Explore The Chapters</h2>
             <main class="chapter-grid">
-                  <div class="chapter-card theme-fragment">
+                <div id="chapterModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 id="modalTitle">Chapter Title</h2>
+                            <span class="close-button">&times;</span>
+                        </div>
+                        <div class="modal-gallery">
+                            <img id="modalImage" src="" alt="Chapter Image">
+                            <div class="gallery-controls">
+                                <button id="prevImage">&#8592;</button>
+                                <button id="nextImage">&#8594;</button>
+                            </div>
+                        </div>
+                        <p id="modalDescription">Chapter Description</p>
+                        <div id="extraInfo" class="hidden"></div>
+                        <button id="toggleInfo">Show More</button>
+                    </div>
+                </div>
+        
+                <div class="chapter-card theme-fragment">
                     <div class="chapter-image">
                         <img src="Style/Assets/Mansion.png" alt="Chapter 2">
                     </div>
                     <div class="chapter-content">
                         <h2>Mansion</h2>
-                        <p>Uncover the secrets hidden within an illager fortress, tainted by something dark</p>
+                        <p>Uncover the secrets hidden within an illager fortress, tainted by something dark.</p>
+                        <button class="view-btn" data-chapter="chapter-1">View Fragment</button>
                     </div>
                 </div>
-                
+        
                 <div class="chapter-card theme-void">
                     <div class="chapter-image">
                         <img src="Style/Assets/Bastion.png" alt="Chapter 1">
@@ -63,9 +85,10 @@
                     <div class="chapter-content">
                         <h2>Bastion</h2>
                         <p>Venture into the depths of the Nether's cindering realm.</p>
+                       <button class="view-btn" data-chapter="chapter-2">View Fragment</button>
                     </div>
                 </div>
-
+        
                 <div class="chapter-card theme-echo">
                     <div class="chapter-image">
                         <img src="Style/Assets/commingsoon.png" alt="Chapter 3">
@@ -75,7 +98,7 @@
                         <p>Coming Soon</p>
                     </div>
                 </div>
-
+        
                 <div class="chapter-card theme-echo">
                     <div class="chapter-image">
                         <img src="Style/Assets/commingsoon.png" alt="Chapter 4">
@@ -85,7 +108,7 @@
                         <p>Coming Soon</p>
                     </div>
                 </div>
-
+        
                 <div class="chapter-card theme-echo">
                     <div class="chapter-image">
                         <img src="Style/Assets/commingsoon.png" alt="Chapter 5">
@@ -95,7 +118,7 @@
                         <p>Coming Soon</p>
                     </div>
                 </div>
-
+        
                 <div class="chapter-card theme-echo">
                     <div class="chapter-image">
                         <img src="Style/Assets/commingsoon.png" alt="Chapter 6">
@@ -118,7 +141,7 @@
                     </div>
                     <h3>Lucreator245</h3>
                     <p class="role">Creator</p>
-                    <p class="desc">Creator and visionary behind the project..</p>
+                    <p class="desc">Creator and visionary behind the project.</p>
                 </div>
         
                 <div class="team-card">
@@ -145,7 +168,7 @@
                     </div>
                     <h3>Xei</h3>
                     <p class="role">Builder & Storycrafter</p>
-                    <p class="desc">Designer with a knack for details.</p>
+                    <p class="desc">Builder and artist who brings passion & fun to our project.</p>
                 </div>
         
                 <div class="team-card">
@@ -154,7 +177,7 @@
                     </div>
                     <h3>Will_Has_Tea</h3>
                     <p class="role">Mechanic Designer & Storycrafter</p>
-                    <p class="desc">Creative mind behind many designs.</p>
+                    <p class="desc">[Still pending]</p>
                 </div>
         
                 <div class="team-card">
@@ -163,20 +186,11 @@
                     </div>
                     <h3>TheMSTAAcorn</h3>
                     <p class="role">Builder</p>
-                    <p class="desc">Expert in creating immersive environments.</p>
-                </div>
-        
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="Style/Assets/Teammembers/pete.png" alt="Team Member">
-                    </div>
-                    <h3>PeteThePirate_</h3>
-                    <p class="role">Builder</p>
-                    <p class="desc">i don't have any information text.</p>
+                    <p class="desc">[Still pending]</p>
                 </div>
             </div>
         </section>
-        
         <script src = "Backend/particles.js"></script>
+        <script src = "Backend/script.js"></script>
     </body>
 </html>
