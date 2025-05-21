@@ -4,6 +4,33 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.scrollBehavior = "";
 });
 
+document.querySelector('.close-button').addEventListener('click', () => {
+    document.getElementById('chapterModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; 
+});
+
+document.getElementById('toggleInfo').addEventListener('click', () => {
+    const info = document.getElementById('extraInfo');
+    const btn = document.getElementById('toggleInfo');
+    const visible = !info.classList.contains('hidden');
+    info.classList.toggle('hidden');
+    btn.textContent = visible ? 'Show More' : 'Show Less';
+});
+
+document.getElementById('prevImage').addEventListener('click', () => {
+    if (images.length > 1) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        document.getElementById('modalImage').src = images[currentIndex];
+    }
+});
+
+document.getElementById('nextImage').addEventListener('click', () => {
+    if (images.length > 1) {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById('modalImage').src = images[currentIndex];
+    }
+});
+
 const chapterData = {
     "chapter-1": {
         title: "Mischievous Mansion",
@@ -37,7 +64,9 @@ let currentIndex = 0;
 document.querySelectorAll('.view-btn').forEach(button => {
     button.addEventListener('click', function () {
         const chapterId = this.dataset.chapter;
+        console.log('Clicked button for:', chapterId);
         const data = chapterData[chapterId];
+        console.log('Data loaded:', data);
         if (!data) return;
 
         images = data.images;
@@ -50,34 +79,9 @@ document.querySelectorAll('.view-btn').forEach(button => {
         document.getElementById('extraInfo').classList.add('hidden');
         document.getElementById('toggleInfo').textContent = 'Show More';
 
-        document.body.style.overflow = 'hidden'; // Scrollblock
+        document.body.style.overflow = 'hidden'; 
         document.getElementById('chapterModal').style.display = 'flex';
+
+        console.log('Modal should be visible now.');
     });
-});
-
-document.querySelector('.close-button').addEventListener('click', () => {
-    document.getElementById('chapterModal').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Scroll aktivieren
-});
-
-document.getElementById('toggleInfo').addEventListener('click', () => {
-    const info = document.getElementById('extraInfo');
-    const btn = document.getElementById('toggleInfo');
-    const visible = !info.classList.contains('hidden');
-    info.classList.toggle('hidden');
-    btn.textContent = visible ? 'Show More' : 'Show Less';
-});
-
-document.getElementById('prevImage').addEventListener('click', () => {
-    if (images.length > 1) {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        document.getElementById('modalImage').src = images[currentIndex];
-    }
-});
-
-document.getElementById('nextImage').addEventListener('click', () => {
-    if (images.length > 1) {
-        currentIndex = (currentIndex + 1) % images.length;
-        document.getElementById('modalImage').src = images[currentIndex];
-    }
 });
